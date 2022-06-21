@@ -23,21 +23,12 @@ function playRound(playerSelection,computerSelection){
     
 }
 
-function rockRound(){
-   console.log(playRound("rock"));
-}
-function paperRound(){
-    console.log(playRound("paper"));
-}
-function scissorsRound(){
-    console.log(playRound("scissors"));
-}
+const buttons = document.querySelectorAll("button");
 
-const btn1 = document.querySelector(".R");
-btn1.addEventListener("click",rockRound);
+buttons.forEach((button) => {
 
-const btn2 = document.querySelector(".P");
-btn2.addEventListener("click",paperRound);
-
-const btn3 = document.querySelector(".S");
-btn3.addEventListener("click",scissorsRound);
+    // and for each one we add a 'click' listener
+    button.addEventListener('click', () => {
+      console.log(playRound(button.id))
+    });
+  });
