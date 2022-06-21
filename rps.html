@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <title>Rock Paper Scissors</title>
+        </head>
+        <body>
+            <script>
+                function computerPlay(){
+                    let choice = ["Rock","Paper","Scissors"];
+                   return choice[Math.floor(Math.random()*3)];
+                }
+                
+                function playRound(playerSelection,computerSelection){
+                    if(playerSelection.toUpperCase() === "ROCK" && computerSelection === "Scissors"){
+                        return "You win! Rock beats Scissors";
+                    } else if(playerSelection.toUpperCase() === "PAPER" && computerSelection === "Rock"){
+                        return "You win! Paper beats Rock";
+                    } else if(playerSelection.toUpperCase() === "SCISSORS" && computerSelection === "Paper"){
+                        return "You win! Scissors beats Paper";
+                    } else if (playerSelection.toUpperCase() === "SCISSORS" && computerSelection === "Rock"){
+                        return "You lose! Rock beats Scissors";
+                    } else if(playerSelection.toUpperCase() === "PAPER" && computerSelection === "Scissors"){
+                        return "You lose! Scissors beats Paper";
+                    } else if(playerSelection.toUpperCase() === "ROCK" && computerSelection === "Paper"){
+                        return "You lose! Paper beats Rock";
+                    } else if(playerSelection.toUpperCase() === computerSelection.toUpperCase()){
+                        return "It's a tie!";
+                    } 
+                }
+
+                function game(){
+                    let i;
+                    let result;
+                    let wins = 0;
+                    let lose = 0;
+                    let tie = 0;
+                    for (let i=0; i < 5; i++){
+                        computerSelection = computerPlay();
+                        const playerSelection = prompt("Rock,Paper,or Scissors?")
+                        result = playRound(playerSelection,computerSelection);
+                        console.log(result);
+                        if (result.includes("win")){
+                            wins++;
+                        }else if (result.includes("lose")){
+                            lose++;
+                        }else if (result.includes("tie")){
+                            tie++;
+                        }
+                    }
+                    
+                    console.log("You got "+wins+"  for wins, "+lose+" for losses and "+tie+" for ties");
+                }
+
+                    
+
+                
+            
+                
+
+            </script>
+        </body>
+    </html>
