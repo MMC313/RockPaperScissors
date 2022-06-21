@@ -24,11 +24,13 @@ function playRound(playerSelection,computerSelection){
 }
 
 const buttons = document.querySelectorAll("button");
+const result = document.querySelector("#result");
 
 buttons.forEach((button) => {
 
     // and for each one we add a 'click' listener
     button.addEventListener('click', () => {
-      console.log(playRound(button.id))
+      result.textContent = playRound(button.id);
     });
   });
+
