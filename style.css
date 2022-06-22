@@ -1,18 +1,34 @@
+body{
+    background-color: bisque;
+}
+
 #scoreboard{
     display:flex;
     justify-content: center;
     margin: 50px;
     gap:50px;
-    font-weight: 700px;
+    font-weight: 700;
 }
 
-.message, #result, .btns{
+
+
+.message, #result, .btncontainer{
     display:flex;
     justify-content: center;
+    margin: 20px;
 
 }
+.resetbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-
+button{
+    border-radius: 15px;
+    background-size: cover;
+    overflow: hidden;
+}
 
 img{
    width: 150px;

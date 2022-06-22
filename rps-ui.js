@@ -1,6 +1,22 @@
 let cScore = 0;
 let pScore = 0;
 
+function disable(){
+    rock.disabled = true
+    paper.disabled = true
+    scissors.disabled = true
+}
+
+function enable(){
+    rock.disabled = false;
+    paper.disabled = false;
+    scissors.disabled = false;
+    pScore=0;
+    ps.textContent=`You score is: ${pScore}`;
+    cScore=0;
+    cs.textContent=`Computer score is: ${cScore}`;
+    message.textContent="";
+}
 
 
 function computerPlay(){
@@ -33,6 +49,10 @@ const result = document.querySelector("#result");
 const cs = document.querySelector(".cscore");
 const ps = document.querySelector(".pscore");
 const message = document.querySelector(".message")
+const rock = document.querySelector("#Rock");
+const paper = document.querySelector("#Paper");
+const scissors = document.querySelector("#Scissors");
+const reset = document.querySelector(".reset")
 
 
 ps.textContent=`You score is: ${pScore}`;
@@ -52,19 +72,20 @@ buttons.forEach((button) => {
             cs.textContent=`Computer score is: ${cScore}`;
         }
         if(pScore === 5){
-            message.textContent="You win! You got 5 points first!"
-
+            message.textContent="You win! You got 5 points first!";
+            disable();
             
         }else if(cScore === 5){
             message.textContent="You lose! The computer got 5 points first!"
+            disable();
 
         }
-      
-
     });
-    
-  
 });
+
+reset.addEventListener("click",()=>{
+    enable();
+})
 
 
 
