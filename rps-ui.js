@@ -35,8 +35,8 @@ const ps = document.querySelector(".pscore");
 const message = document.querySelector(".message")
 
 
-ps.textContent=pScore;
-cs.textContent=cScore;
+ps.textContent=`You score is: ${pScore}`;
+cs.textContent=`Computer score is: ${cScore}`;
 
 
 buttons.forEach((button) => {
@@ -46,10 +46,10 @@ buttons.forEach((button) => {
         result.textContent = playRound(button.id);
         if(result.textContent.includes("win")){
             pScore++;
-            ps.textContent=`Your score is ${pScore}`;
+            ps.textContent=`Your score is: ${pScore}`;
         }else if(result.textContent.includes("lose")){
             cScore++;
-            cs.textContent=`Computer score is ${cScore}`;
+            cs.textContent=`Computer score is: ${cScore}`;
         }
         if(pScore === 5){
             message.textContent="You win! You got 5 points first!"

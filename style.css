@@ -1,0 +1,21 @@
+#scoreboard{
+    display:flex;
+    justify-content: center;
+    margin: 50px;
+    gap:50px;
+    font-weight: 700px;
+}
+
+.message, #result, .btns{
+    display:flex;
+    justify-content: center;
+
+}
+
+
+
+img{
+   width: 150px;
+   height: 100px; 
+}
+
